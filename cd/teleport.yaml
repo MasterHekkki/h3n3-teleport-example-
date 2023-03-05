@@ -1,0 +1,42 @@
+version: v3
+teleport:
+  nodename: ****
+  data_dir: ****
+  join_params:
+    token_name: *****
+    method: token
+  proxy_server: ****
+  log:
+    output: stderr
+    severity: INFO
+    format:
+      output: text
+  ca_pin: sha256:*****
+  diag_addr: ""
+auth_service:
+  enabled: "no"
+ssh_service:
+  enabled: "yes"
+  labels:
+    teleport.internal/resource-id: ****
+  commands:
+  - name: hostname
+    command: [hostname]
+    period: 1m0s
+proxy_service:
+  enabled: "no"
+  https_keypairs: []
+  https_keypairs_reload_interval: 0s
+  acme: {}
+app_service:
+  enabled: "yes"
+  debug_app: false
+  apps:
+  - name: "****"
+    uri: "****"
+    public_addr: "app.**.***.com
+    insecure_skip_verify: false
+  - name: "*****"
+    uri: "*****"
+    public_addr: "app.**.***.com"
+    insecure_skip_verify: true
