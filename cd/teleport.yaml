@@ -3,7 +3,7 @@ teleport:
   nodename: ****
   data_dir: ****
   join_params:
-    token_name: *****
+    token_name: put the token generated earlier here
     method: token
   proxy_server: ****
   log:
@@ -11,7 +11,7 @@ teleport:
     severity: INFO
     format:
       output: text
-  ca_pin: sha256:*****
+  ca_pin: sha256: put the ca pin generated earlier here 
   diag_addr: ""
 auth_service:
   enabled: "no"
@@ -32,11 +32,15 @@ app_service:
   enabled: "yes"
   debug_app: false
   apps:
-  - name: "****"
+  - name: "app1"
     uri: "****"
     public_addr: "app.**.***.com
     insecure_skip_verify: false
-  - name: "*****"
+  - name: "app2"
     uri: "*****"
     public_addr: "app.**.***.com"
     insecure_skip_verify: true
+  - name: "app3"
+    uri: "http://localhost:portnumber"
+    public_addr: "appname.teleporturl.me"
+    insecure_skip_verify: false (set true or false based on if there's a ssl cert from a trusted domain)
